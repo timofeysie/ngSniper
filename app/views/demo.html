@@ -1,0 +1,90 @@
+<!--<div bindonce ng-repeat="thing in demoAwesomeThings" class="row marketing">
+	{{ thing }} <br/>
+</div>-->
+
+<!-- BINDONCE BASIC EXAMPLES ##############################################################
+    The following examples demonstrate the basic uses of pasvaz bindonce and native
+    Angular 1.3+ single binding :: functions.
+-->
+
+<!-- Basic example of using pasvaz bindonce.  Note that the inability to single
+    bind the ng-repeat leaves one more watcher than the native angular
+    single binding functions.  Note the required bindonce constructor call prior
+    to the call to bo-text.-->
+<!--<div bindonce ng-repeat="thing in demoAwesomeThings" class="row marketing">
+	<span bo-text="thing"></span> <br/>
+</div>-->
+
+<!-- The basic new built in :: single binding in Angular allows for single
+    binding in the interpolated statement as well as in the ng-repeat
+ -->
+<!--<div ng-repeat="thing in ::demoAwesomeThings" class="row marketing">
+{{ ::thing }} <br/>
+</div>-->
+
+<!-- BINDONCE MORE INTERMEDIATE EXAMPLES ##################################################
+    The following examples demonstrate the use of both binding functions in using a very
+    large country object that is on scope.
+-->
+
+<!-- The basic two way bound version.  Note the massive amount of scopes and watchers
+    created on the page in the ngPerformance console
+-->
+<!--<h3>Countries Two Way Bound</h3>
+Name | Alpha-3 | Country Code | Region Code | Sub-Region Code
+<h5><a href="" ng-click="countries[0].name = 'changed'">Change First Country</a></h5>
+<ul>
+    <li ng-repeat="country in countries">
+        <span ng-bind="country.name"></span> |
+        <span ng-bind="country.alpha3"></span> |
+        <span ng-bind="country.countryCode"></span> |
+        <span ng-bind="country.regionCode"></span> |
+        <span ng-bind="country.subRegionCode"></span> |
+    </li>
+</ul>-->
+
+<!-- This code shows a use of pasvaz bindonce to turn the elements into single bound.-->
+<!--<h3>Countries PASVAZ Bound Once</h3>
+Name | Alpha-3
+<h5><a href="" ng-click="countries[0].name = 'changed'">Change First Country</a></h5>
+<ul>
+    <li bindonce ng-repeat="country in countries">
+        <span bo-text="country.name"></span><span> | </span><span bo-text="country.alpha3"></span>
+    </li>
+</ul>-->
+
+<!-- This code shows a use of angular single binding to turn the elements into single bound.-->
+<!--<h3>Countries Angular Bound Once</h3>
+Name | Alpha-3 | Country Code | Region Code | Sub-Region Code
+<h5><a href="" ng-click="countries[0].name = 'changed'">Change First Country</a></h5>
+<ul>
+    <li ng-repeat="country in ::countries">
+        <span>{{::country.name}} | {{::country.alpha3}} </span>
+    </li>
+</ul>-->
+
+
+<!-- BINDONCE MORE INTERMEDIATE EXAMPLES - DROP DOWN LIST BOXES############################
+    Any time a heavy use of ng-repeat is needed, watchers can explode.  The following
+    examples show a drop down three different ways using the large country object.
+-->
+
+<!-- One basic bad-practice two way bound version.  Note the massive amount of scopes and watchers
+    created on the page in the ngPerformance console by the incorrect use of ng-repeat instead of
+    ng-options.  DDL's are one of the biggest watcher bloat offenders.
+-->
+<!-- OMG !! -->
+<!--<h3>Home Country ng-repeat</h3>
+<select ng-model="myCountry">
+    <option value="">&#45;&#45; From Where Do You Hail, Stranger? &#45;&#45;</option>
+    <option ng-repeat="country in countries" value="{{country.alpha-3}}">{{country.name}}</option>
+</select>-->
+
+<!--Here is the same DDL using ng-options-->
+<!-- BEST -->
+<!--<h3>Home Country ng-options</h3>
+<select ng-model="myCountry" ng-options="country.name for country in countries">
+    <option value="">&#45;&#45; From Where Do You Hail, Stranger? &#45;&#45;</option>
+</select>-->
+
+

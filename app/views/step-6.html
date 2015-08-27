@@ -1,0 +1,231 @@
+<h2>Step 6: select with ng-repeat</h2>
+<ul class="list-unstyled list-inline">
+	<li><a ng-href="#/step-5">Step 5</a></li>
+	<li><a ng-href="#/step-7">Step 7</a></li>
+</ul>
+<div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+		<h3 ng-mouseenter="showTotal=true" 
+			ng-mouseleave="showTotal=false">
+			<span class="glyphicon glyphicon-shopping-cart" ></span> 
+			Shopping Cart</h3>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+		<span ng-show="showTotal">
+			<strong>Total: {{total | currency}}</strong></span>
+	</div> 
+</div>
+
+<form>
+
+	<div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+				<h4><span class="glyphicon glyphicon-user"></span> Personal Information</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+					<input type="text" class="form-control" ng-model="myFirstName" placeholder="First Name">
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+					<input type="text" class="form-control" ng-model="myLastName" placeholder="Last Name">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></div>
+					<input type="text" class="form-control" ng-model="myHomePhone" placeholder="Home Phone">
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></div>
+					<input type="text" class="form-control" ng-model="myMobilePhone" placeholder="Mobile Phone">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+					<input type="text" class="form-control" ng-model="myEmail" placeholder="Email Address">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+				<h4><span class="glyphicon glyphicon-home"></span> Shipping Address</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+					<input type="text" class="form-control" ng-model="myShippingAddress1" placeholder="Address 1">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+					<input type="text" class="form-control" ng-model="myShippingAddress2" placeholder="Address 2">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-sm-6 col-xs-6 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+					<select ng-model="myShippingCountry" class="form-control">
+						<option value="">Country</option>
+						<option ng-repeat="country in checkoutCountries" value="{{country.alpha-3}}">{{country.name}}
+						</option>
+					</select>
+
+<!-- 					<select ng-model="myShippingCountry" ng-options="country.name for country in checkoutCountries" class="form-control">
+						<option value="">Country</option>
+					</select> -->
+
+				</div>
+			</div>
+		</div>
+		<!--
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+					<input type="text" class="form-control" ng-model="myShippingZip" placeholder="Zip/Postal Code">
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div> -->
+					<!-- <select ng-model="myShippingState" class="form-control">
+						<option value="">State/Postal Code</option>
+						<option ng-repeat="state in checkoutStates" value="{{state.abbrreviation}}">{{state.name}}
+						</option>
+					</select>-->
+
+					<!-- <select ng-model="myShippingState" ng-options="state.name for state in checkoutStates" class="form-control">
+						<option value="">State</option>
+					</select> -->
+
+				<!-- </div>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+					<input type="text" class="form-control" ng-model="myShippingCity" placeholder="City">
+				</div>
+			</div>
+		</div> -->
+
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+				<h4><span class="glyphicon glyphicon-shopping-cart"></span> Billing Address</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+					<input type="text" class="form-control" ng-model="myBillingAddress1" placeholder="Address 1">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+					<input type="text" class="form-control" ng-model="myBillingAddress2" placeholder="Address 2">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-sm-6 col-xs-6 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+					<!-- <select ng-model="myBillingCountry" class="form-control">
+						<option value="">Country</option>
+						<option ng-repeat="country in checkoutCountries" value="{{country.alpha-3}}">{{country.name}}
+						</option>-->
+					</select>
+
+					<!-- <select ng-model="myBillingCountry" ng-options="country.name for country in checkoutCountries" class="form-control">
+						<option value="">Country</option>
+					</select> -->
+
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+					<input type="text" class="form-control" ng-model="myBillingZip" placeholder="Zip/Postal Code">
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+					<!--<select ng-model="myBillingState" class="form-control">
+						<option value="">State/Postal Code</option>
+						<option ng-repeat="state in checkoutStates" value="{{state.abbrreviation}}">{{state.name}}
+						</option>
+					</select>-->
+
+					<!-- <select ng-model="myBillingState" ng-options="state.name for state in checkoutStates" class="form-control">
+						<option value="">State</option>
+					</select> -->
+
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+					<input type="text" class="form-control" ng-model="myBillingCity" placeholder="City">
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+				<h4><span class="glyphicon glyphicon-credit-card"></span> Payment Information</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-credit-card"></span></div>
+					<input type="text" class="form-control" ng-model="myCreditCard" placeholder="Credit Card Number">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+				<div datepicker name="expirationDate" placeholder="Expiration Date" input-model="fields.expirationDate"
+					 ng-required="true" months-to-show="2" months-backward="12" months-forward="48"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+				<input type="submit" value="Submit" class="btn btn-success"/>
+			</div>
+		</div>
+
+	</div>
+
+</form>
