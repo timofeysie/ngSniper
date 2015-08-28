@@ -3,7 +3,9 @@
 A ngPerformance demo app that shows the number of scopes, watches and digest cycels, etc. 
 It also is based on the demo created by the author of ngPerformance, Scott Tate.
 
+## To Do
 
+Use Blind Spot's Bindonce lib in a few demos as a solution to too many bindings.
 
 ## Build & development
 
