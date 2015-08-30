@@ -64,6 +64,18 @@ angular
                 templateUrl: 'views/step-7.html',
                 controller: 'CheckoutCtrl'
             })
+            .when('/step-8', {
+                templateUrl: 'views/step-8.html',
+                controller: 'CheckoutCtrl'
+            })
+            .when('/step-9', {
+                templateUrl: 'views/step-9.html',
+                controller: 'CheckoutCtrl'
+            })
+            .when('/step-10', {
+                templateUrl: 'views/step-10.html',
+                controller: 'CheckoutCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

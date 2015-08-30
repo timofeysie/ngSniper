@@ -6,6 +6,9 @@ It also is based on the demo created by the author of ngPerformance, Scott Tate.
 ## To Do
 
 Use Blind Spot's Bindonce lib in a few demos as a solution to too many bindings.
+Use charts to display the stats.
+Use colours to indicate Google findings about when a user is ready to leave a website after waiting, and other benchmark metrics.  For bindings, "more of 2000 watchers can lag the UI"
+
 
 ## Build & development
 

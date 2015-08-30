@@ -1,7 +1,7 @@
-<h2>Step 8: ng-model with ng-repeat options</h2>
+<h2>Step 9: ng-model with ng-repeat options again</h2>
 <ul class="list-unstyled list-inline">
-	<li><a ng-href="#/step-7">Step 7</a></li>
-	<li><a ng-href="#/step-9">Step 9</a></li>
+	<li><a ng-href="#/step-8">Step 8</a></li>
+	<li><a ng-href="#/step-10">Step 10</a></li>
 </ul>
 <div class="row">
 	<div class="col-md-12 col-sm-12 col-xs-12 form-group">
@@ -17,25 +17,21 @@
 			<strong>Total: {{total | currency}}</strong></span>
 	</div> 
 </div>
-
 <form>
-
 	<div>
-	
 		<div class="row">
-			<div class="col-md-8 col-sm-6 col-xs-6 form-group">
+			<div class="col-md-4 col-sm-4 col-xs-12 form-group">
 				<div class="input-group">
 					<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
-					<select ng-model="myShippingCountry" class="form-control">
-						<option value="">Country</option>
-						<option ng-repeat="country in checkoutCountries" value="{{country.alpha-3}}">{{country.name}}
-						</option>
+					<input type="text" class="form-control" ng-model="myBillingZip" placeholder="Zip/Postal Code">
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-12 form-group">
+				<div class="input-group">
+					<div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+					<select ng-model="myBillingState" ng-options="state.name for state in checkoutStates" class="form-control">
+						<option value="">State</option>
 					</select>
-<!-- 					<select ng-model="myShippingCountry" 
-						ng-options="country.name for country in checkoutCountries" 
-						class="form-control">
-						<option value="">Country</option>
-					</select> -->
 
 				</div>
 			</div>
